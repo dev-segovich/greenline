@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title data-i18n="meta.title">Greenline Property Management – Coming Soon</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta
+      name="description"
+      data-i18n="meta.description"
+      content="We are building a modern platform for smart, transparent, and sustainable property management."
+    />
+
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <div class="gl-page">
+      <div class="gl-overlay"></div>
+
+      <!-- HEADER -->
+      <header class="gl-header">
+        <div class="gl-logo">
+          <div class="gl-logo-mark">G</div>
+          <div class="gl-logo-text">
+            <span class="gl-logo-title">Greenline</span>
+            <span class="gl-logo-subtitle">Property Management</span>
+          </div>
+        </div>
+
+        <!-- Idioma manual (opcional) -->
+        <div class="lang-switcher">
+            <button data-lang="en" class="lang-btn">EN</button>
+            <button data-lang="es" class="lang-btn">ES</button>
+        </div>
+
+      </header>
+
+      <!-- MAIN HERO -->
+      <main class="gl-main">
+        <section class="gl-hero">
+          <div class="gl-hero-content">
+            <p class="gl-badge" data-i18n="badge">Coming Soon</p>
+
+            <h1 class="gl-title">
+              <span data-i18n="hero.title1">Professional property management</span>
+              <span class="gl-title-highlight" data-i18n="hero.title2">
+                with a sustainable approach.
+              </span>
+            </h1>
+
+            <p class="gl-subtitle" data-i18n="hero.subtitle">
+              We are building a platform designed to manage your real estate
+              portfolio with transparency, efficiency, and sustainability.
+            </p>
+
+            <!-- FORM -->
+            <form class="gl-form">
+              <label for="email" class="gl-form-label" data-i18n="form.label">
+                Leave your email and we’ll notify you once we launch:
+              </label>
+
+              <div class="gl-form-row">
+                <input
+                  type="email"
+                  id="email"
+                  class="gl-input"
+                  required
+                  data-i18n-placeholder="form.placeholder"
+                  placeholder="you@example.com"
+                />
+
+                <button type="submit" class="gl-button" data-i18n="form.button">
+                  Notify Me
+                </button>
+              </div>
+
+              <p class="gl-privacy" data-i18n="form.privacy">
+                No spam. Just one email when we go live.
+              </p>
+            </form>
+
+            <!-- META DATA -->
+            <div class="gl-meta">
+              <div class="gl-meta-item">
+                <span class="gl-meta-label" data-i18n="meta1.label">Focus</span>
+                <span class="gl-meta-value" data-i18n="meta1.value">Residential & Commercial</span>
+              </div>
+
+              <div class="gl-meta-item">
+                <span class="gl-meta-label" data-i18n="meta2.label">Coverage</span>
+                <span class="gl-meta-value" data-i18n="meta2.value">Full 360° Management</span>
+              </div>
+
+              <div class="gl-meta-item">
+                <span class="gl-meta-label" data-i18n="meta3.label">Commitment</span>
+                <span class="gl-meta-value" data-i18n="meta3.value">Efficiency & Sustainability</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- SIDE CARD -->
+          <aside class="gl-side-card">
+            <div class="gl-side-gradient"></div>
+
+            <div class="gl-side-inner">
+              <h2 class="gl-side-title" data-i18n="side.title">What will you be able to do?</h2>
+
+              <ul class="gl-list">
+                <li data-i18n="side.list1">Centralize the management of all your properties.</li>
+                <li data-i18n="side.list2">View key indicators and insights in real time.</li>
+                <li data-i18n="side.list3">Automate operational tasks and reminders.</li>
+                <li data-i18n="side.list4">Enhance communication with tenants and owners.</li>
+              </ul>
+
+              <div class="gl-divider"></div>
+
+              <p class="gl-side-note" data-i18n="side.note">
+                We are currently in the final stage of development...
+              </p>
+            </div>
+          </aside>
+        </section>
+      </main>
+
+      <!-- FOOTER -->
+      <footer class="gl-footer">
+        <p class="gl-footer-text">
+          © <span id="year"></span>
+          <span data-i18n="footer.text">Greenline Property Management. All rights reserved.</span>
+        </p>
+      </footer>
+    </div>
+
+    <script src="main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,37 @@
+{
+  "meta": {
+    "title": "Greenline Property Management – Próximamente",
+    "description": "Estamos construyendo una plataforma moderna para la gestión transparente, inteligente y sostenible de propiedades."
+  },
+  "badge": "Próximamente",
+
+  "hero": {
+    "title1": "Gestión profesional de propiedades",
+    "title2": "con un enfoque sostenible.",
+    "subtitle": "Estamos creando una plataforma diseñada para administrar tu portafolio inmobiliario con transparencia, eficiencia y sostenibilidad."
+  },
+
+  "form": {
+    "label": "Déjanos tu correo y te avisaremos cuando lancemos:",
+    "placeholder": "tu@correo.com",
+    "button": "Avisarme",
+    "privacy": "Sin spam. Solo un correo cuando lancemos."
+  },
+
+  "meta1": { "label": "Enfoque", "value": "Residencial y Comercial" },
+  "meta2": { "label": "Cobertura", "value": "Gestión integral 360°" },
+  "meta3": { "label": "Compromiso", "value": "Eficiencia y Sostenibilidad" },
+
+  "side": {
+    "title": "¿Qué podrás hacer?",
+    "list1": "Centralizar la gestión de todas tus propiedades.",
+    "list2": "Visualizar indicadores clave en tiempo real.",
+    "list3": "Automatizar tareas operativas y recordatorios.",
+    "list4": "Mejorar la comunicación con inquilinos y propietarios.",
+    "note": "Actualmente estamos en la etapa final de desarrollo. Muy pronto compartiremos más detalles."
+  },
+
+  "footer": {
+    "text": "Greenline Property Management. Todos los derechos reservados."
+  }
+}
