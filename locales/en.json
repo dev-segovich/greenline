@@ -1,21 +1,27 @@
 {
   "meta": {
     "title": "Greenline Property Management – Coming Soon",
-    "description": "We are building a modern platform for smart, transparent, and sustainable property management."
+    "description": "Institutional Efficiency. Local Care. Maximum NOI."
   },
   "badge": "Coming Soon",
 
   "hero": {
-    "title1": "Professional property management",
-    "title2": "with a sustainable approach.",
-    "subtitle": "We are building a platform designed to manage your real estate portfolio with transparency, efficiency, and sustainability."
+    "title1": "Institutional Efficiency. Local Care.",
+    "title2": "Maximum NOI.",
+    "subtitle": "Green Line brings the operational power, compliance shields, and economies of scale of the world's largest firms to your portfolio, managed with a conscience."
   },
 
   "form": {
     "label": "Leave your email and we’ll notify you once we launch:",
     "placeholder": "you@example.com",
-    "button": "Notify Me",
+    "button": "Join the movement now",
     "privacy": "No spam. Just one email when we go live."
+  },
+
+  "mid_section": {
+    "title": "We Turn Rental Properties into High-Performance Assets.",
+    "body1": "Managing a small to mid-size portfolio shouldn't mean settling for small-scale results. At Green Line, we bridge the gap. We leverage a hybrid operational model that combines a centralized, tech-enabled remote team for speed and precision with dedicated local experts for the hands-on care your property deserves.",
+    "body2": "We are obsessed with the numbers. By aggregating purchasing power and utilizing AI-driven maintenance protocols, we lower your operating costs while elevating the resident experience. The result? Reduced turnover, bulletproof compliance, and a healthier bottom line."
   },
 
   "meta1": { "label": "Focus", "value": "Residential & Commercial" },
@@ -23,12 +29,31 @@
   "meta3": { "label": "Commitment", "value": "Efficiency & Sustainability" },
 
   "side": {
-    "title": "What will you be able to do?",
-    "list1": "Centralize the management of all your properties.",
-    "list2": "View key indicators and insights in real time.",
-    "list3": "Automate operational tasks and reminders.",
-    "list4": "Enhance communication with tenants and owners.",
-    "note": "We are currently in the final stage of development. More details coming soon."
+    "title": "What makes us different?",
+    "items": [
+      {
+        "title": "The Hybrid Advantage: Global Efficiency, Local Roots",
+        "desc": "Our centralized remote team handles administration, billing, and tenant support with 24/7 speed, drastically reducing overhead. This allows us to deploy skilled local teams strictly where it matters: preventive maintenance, eco-friendly cleaning, and rapid-response service. You get the efficiency of a REIT with the personal touch of a neighbor."
+      },
+      {
+        "title": "The Compliance Shield: Lawsuit Prevention & Regulatory Arbitrage",
+        "desc": "Real estate is a legal minefield. From Fair Housing Act nuances to complex LIHTC and HUD voucher requirements, our compliance team acts as your armor. We specialize in Florida’s Live Local Act, helping you navigate \"Missing Middle\" tax exemptions and zoning incentives to unlock hidden value in your asset while keeping you out of the courtroom."
+      },
+      {
+        "title": "Eco-Operational Excellence",
+        "desc": "\"Green\" isn't just part of our name; it's our operational philosophy. We run a paperless backend and utilize hospital-grade, eco-friendly cleaning products that protect your asset and the environment without the premium price tag. Sustainable management attracts higher-quality tenants and lowers long-term utility and turnover costs."
+      },
+      {
+        "title": "AI-Driven Asset Protection",
+        "desc": "We don’t wait for things to break. Green Line utilizes proprietary AI to analyze maintenance data, predicting failures before they become emergencies. This data-driven approach ensures your property meets all legal safety standards while extending the lifespan of your CapEx systems."
+      },
+      {
+        "title": "People-First Profitability",
+        "desc": "A stable tenant is a paying tenant. We view residents holistically, offering financial literacy programs and health-conscious living environments. By investing in the financial education and well-being of our residents—especially in our affordable housing sectors—we secure housing stability, reduce eviction rates, and guarantee a consistent revenue stream for you."
+      }
+    ],
+    "specialists": "Specialists in: LIHTC | Section 8 Vouchers | Florida Live Local Act | Mixed-Income Developments",
+    "note": "We are currently in the final stage of development..."
   },
 
   "footer": {
