@@ -1,21 +1,27 @@
 {
   "meta": {
     "title": "Greenline Property Management – Próximamente",
-    "description": "Estamos construyendo una plataforma moderna para la gestión transparente, inteligente y sostenible de propiedades."
+    "description": "Eficiencia Institucional. Cuidado Local. Máximo NOI."
   },
   "badge": "Próximamente",
 
   "hero": {
-    "title1": "Gestión profesional de propiedades",
-    "title2": "con un enfoque sostenible.",
-    "subtitle": "Estamos creando una plataforma diseñada para administrar tu portafolio inmobiliario con transparencia, eficiencia y sostenibilidad."
+    "title1": "Eficiencia Institucional. Cuidado Local.",
+    "title2": "Máximo NOI.",
+    "subtitle": "Green Line aporta el poder operativo, los escudos de cumplimiento y las economías de escala de las firmas más grandes del mundo a su portafolio, gestionado con conciencia."
   },
 
   "form": {
     "label": "Déjanos tu correo y te avisaremos cuando lancemos:",
     "placeholder": "tu@correo.com",
-    "button": "Avisarme",
+    "button": "Únete al movimiento ahora",
     "privacy": "Sin spam. Solo un correo cuando lancemos."
+  },
+
+  "mid_section": {
+    "title": "Convertimos Propiedades de Alquiler en Activos de Alto Rendimiento.",
+    "body1": "Gestionar un portafolio pequeño o mediano no debería significar conformarse con resultados a pequeña escala. En Green Line, cerramos la brecha. Aprovechamos un modelo operativo híbrido que combina un equipo remoto centralizado y tecnológico para velocidad y precisión con expertos locales dedicados para el cuidado práctico que su propiedad merece.",
+    "body2": "Estamos obsesionados con los números. Al agregar poder de compra y utilizar protocolos de mantenimiento impulsados por IA, reducimos sus costos operativos mientras elevamos la experiencia del residente. ¿El resultado? Menor rotación, cumplimiento blindado y un resultado final más saludable."
   },
 
   "meta1": { "label": "Enfoque", "value": "Residencial y Comercial" },
@@ -23,12 +29,31 @@
   "meta3": { "label": "Compromiso", "value": "Eficiencia y Sostenibilidad" },
 
   "side": {
-    "title": "¿Qué podrás hacer?",
-    "list1": "Centralizar la gestión de todas tus propiedades.",
-    "list2": "Visualizar indicadores clave en tiempo real.",
-    "list3": "Automatizar tareas operativas y recordatorios.",
-    "list4": "Mejorar la comunicación con inquilinos y propietarios.",
-    "note": "Actualmente estamos en la etapa final de desarrollo. Muy pronto compartiremos más detalles."
+    "title": "¿Qué nos hace diferentes?",
+    "items": [
+      {
+        "title": "La Ventaja Híbrida: Eficiencia Global, Raíces Locales",
+        "desc": "Nuestro equipo remoto centralizado maneja la administración, facturación y soporte al inquilino con velocidad 24/7, reduciendo drásticamente los gastos generales. Esto nos permite desplegar equipos locales calificados estrictamente donde importa: mantenimiento preventivo, limpieza ecológica y servicio de respuesta rápida. Obtienes la eficiencia de un REIT con el toque personal de un vecino."
+      },
+      {
+        "title": "El Escudo de Cumplimiento: Prevención de Demandas y Arbitraje Regulatorio",
+        "desc": "El sector inmobiliario es un campo minado legal. Desde los matices de la Ley de Vivienda Justa hasta los complejos requisitos de LIHTC y vales de HUD, nuestro equipo de cumplimiento actúa como su armadura. Nos especializamos en la Ley Live Local de Florida, ayudándole a navegar las exenciones fiscales y los incentivos de zonificación para desbloquear valor oculto en su activo mientras lo mantenemos fuera de los tribunales."
+      },
+      {
+        "title": "Excelencia Eco-Operativa",
+        "desc": "\"Green\" no es solo parte de nuestro nombre; es nuestra filosofía operativa. Ejecutamos un backend sin papel y utilizamos productos de limpieza ecológicos de grado hospitalario que protegen su activo y el medio ambiente sin el precio premium. La gestión sostenible atrae inquilinos de mayor calidad y reduce los costos de servicios públicos y rotación a largo plazo."
+      },
+      {
+        "title": "Protección de Activos Impulsada por IA",
+        "desc": "No esperamos a que las cosas se rompan. Green Line utiliza IA patentada para analizar datos de mantenimiento, prediciendo fallas antes de que se conviertan en emergencias. Este enfoque basado en datos asegura que su propiedad cumpla con todos los estándares legales de seguridad mientras extiende la vida útil de sus sistemas CapEx."
+      },
+      {
+        "title": "Rentabilidad Primero las Personas",
+        "desc": "Un inquilino estable es un inquilino que paga. Vemos a los residentes de manera holística, ofreciendo programas de educación financiera y entornos de vida conscientes de la salud. Al invertir en la educación financiera y el bienestar de nuestros residentes, especialmente en nuestros sectores de vivienda asequible, aseguramos la estabilidad de la vivienda, reducimos las tasas de desalojo y garantizamos un flujo de ingresos constante para usted."
+      }
+    ],
+    "specialists": "Especialistas en: LIHTC | Vales de Sección 8 | Ley Live Local de Florida | Desarrollos de Ingresos Mixtos",
+    "note": "Actualmente estamos en la etapa final de desarrollo..."
   },
 
   "footer": {
