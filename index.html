@@ -1,120 +1,152 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title data-i18n="meta.title">Greenline Property Management – Coming Soon</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<head>
+		<meta charset="UTF-8" />
+		<title data-i18n="meta.title">
+			Greenline Property Management – Coming Soon
+		</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <meta
-      name="description"
-      data-i18n="meta.description"
-      content="We are building a modern platform for smart, transparent, and sustainable property management."
-    />
+		<meta
+			name="description"
+			data-i18n="meta.description"
+			content="We are building a modern platform for smart, transparent, and sustainable property management."
+		/>
 
-    <link rel="stylesheet" href="styles.css" />
-  </head>
+		<link rel="stylesheet" href="styles.css" />
+	</head>
 
-  <body>
-    <div class="gl-page">
-      <div class="gl-overlay"></div>
+	<body>
+		<div class="gl-page">
+			<div class="gl-overlay"></div>
 
-      <!-- HEADER -->
-      <header class="gl-header">
-        <div class="gl-logo">
-          <img src="img/logo.webp" alt="Greenline Property Management" class="gl-logo-img">
-        </div>
+			<!-- HEADER -->
+			<header class="gl-header">
+				<div class="gl-logo">
+					<img
+						src="img/logo.webp"
+						alt="Greenline Property Management"
+						class="gl-logo-img"
+					/>
+				</div>
 
-        <!-- Idioma manual (opcional) -->
-        <div class="lang-switcher">
-            <button data-lang="en" class="lang-btn">EN</button>
-            <button data-lang="es" class="lang-btn">ES</button>
-        </div>
+				<!-- Idioma manual (opcional) -->
+				<div class="lang-switcher">
+					<button data-lang="en" class="lang-btn">EN</button>
+					<button data-lang="es" class="lang-btn">ES</button>
+				</div>
+			</header>
 
-      </header>
+			<!-- MAIN HERO -->
+			<main class="gl-main">
+				<section class="gl-hero">
+					<div class="gl-hero-content">
+						<p class="gl-badge" data-i18n="badge">Coming Soon</p>
 
-      <!-- MAIN HERO -->
-      <main class="gl-main">
-        <section class="gl-hero">
-          <div class="gl-hero-content">
-            <p class="gl-badge" data-i18n="badge">Coming Soon</p>
+						<h1 class="gl-title">
+							<span data-i18n="hero.title1"
+								>Institutional Efficiency. Local Care.</span
+							>
+							<span class="gl-title-highlight" data-i18n="hero.title2">
+								Maximum NOI.
+							</span>
+						</h1>
 
-            <h1 class="gl-title">
-              <span data-i18n="hero.title1">Institutional Efficiency. Local Care.</span>
-              <span class="gl-title-highlight" data-i18n="hero.title2">
-                Maximum NOI.
-              </span>
-            </h1>
+						<p class="gl-subtitle" data-i18n="hero.subtitle">
+							Green Line brings the operational power, compliance shields, and
+							economies of scale of the world's largest firms to your portfolio,
+							managed with a conscience.
+						</p>
 
-            <p class="gl-subtitle" data-i18n="hero.subtitle">
-              Green Line brings the operational power, compliance shields, and economies of scale of the world's largest firms to your portfolio, managed with a conscience.
-            </p>
+						<!-- FORM -->
+						<form class="gl-form" action="process_form.php" method="POST">
+							<label for="email" class="gl-form-label" data-i18n="form.label">
+								Leave your email and we’ll notify you once we launch:
+							</label>
 
-            <!-- FORM -->
-            <form class="gl-form">
-              <label for="email" class="gl-form-label" data-i18n="form.label">
-                Leave your email and we’ll notify you once we launch:
-              </label>
+							<div class="gl-form-row">
+								<input
+									type="email"
+									id="email"
+									name="email"
+									class="gl-input"
+									required
+									data-i18n-placeholder="form.placeholder"
+									placeholder="you@example.com"
+								/>
 
-              <div class="gl-form-row">
-                <input
-                  type="email"
-                  id="email"
-                  class="gl-input"
-                  required
-                  data-i18n-placeholder="form.placeholder"
-                  placeholder="you@example.com"
-                />
+								<button type="submit" class="gl-button" data-i18n="form.button">
+									Join the movement now
+								</button>
+							</div>
 
-                <button type="submit" class="gl-button" data-i18n="form.button">
-                  Join the movement now
-                </button>
-              </div>
+							<p class="gl-privacy" data-i18n="form.privacy">
+								No spam. Just one email when we go live.
+							</p>
+						</form>
 
-              <p class="gl-privacy" data-i18n="form.privacy">
-                No spam. Just one email when we go live.
-              </p>
-            </form>
+						<!-- MID SECTION -->
+						<div class="gl-mid-section">
+							<h2 class="gl-mid-title" data-i18n="mid_section.title">
+								We Turn Rental Properties into High-Performance Assets.
+							</h2>
+							<p class="gl-mid-text" data-i18n="mid_section.body1">
+								Managing a small to mid-size portfolio shouldn't mean settling
+								for small-scale results. At Green Line, we bridge the gap. We
+								leverage a hybrid operational model that combines a centralized,
+								tech-enabled remote team for speed and precision with dedicated
+								local experts for the hands-on care your property deserves.
+							</p>
+							<p class="gl-mid-text" data-i18n="mid_section.body2">
+								We are obsessed with the numbers. By aggregating purchasing
+								power and utilizing AI-driven maintenance protocols, we lower
+								your operating costs while elevating the resident experience.
+								The result? Reduced turnover, bulletproof compliance, and a
+								healthier bottom line.
+							</p>
+						</div>
 
-            <!-- MID SECTION -->
-            <div class="gl-mid-section">
-                <h2 class="gl-mid-title" data-i18n="mid_section.title">We Turn Rental Properties into High-Performance Assets.</h2>
-                <p class="gl-mid-text" data-i18n="mid_section.body1">
-                    Managing a small to mid-size portfolio shouldn't mean settling for small-scale results. At Green Line, we bridge the gap. We leverage a hybrid operational model that combines a centralized, tech-enabled remote team for speed and precision with dedicated local experts for the hands-on care your property deserves.
-                </p>
-                <p class="gl-mid-text" data-i18n="mid_section.body2">
-                    We are obsessed with the numbers. By aggregating purchasing power and utilizing AI-driven maintenance protocols, we lower your operating costs while elevating the resident experience. The result? Reduced turnover, bulletproof compliance, and a healthier bottom line.
-                </p>
-            </div>
+						<!-- META DATA -->
+						<div class="gl-meta">
+							<div class="gl-meta-item">
+								<span class="gl-meta-label" data-i18n="meta1.label">Focus</span>
+								<span class="gl-meta-value" data-i18n="meta1.value"
+									>Residential & Commercial</span
+								>
+							</div>
 
-            <!-- META DATA -->
-            <div class="gl-meta">
-              <div class="gl-meta-item">
-                <span class="gl-meta-label" data-i18n="meta1.label">Focus</span>
-                <span class="gl-meta-value" data-i18n="meta1.value">Residential & Commercial</span>
-              </div>
+							<div class="gl-meta-item">
+								<span class="gl-meta-label" data-i18n="meta2.label"
+									>Coverage</span
+								>
+								<span class="gl-meta-value" data-i18n="meta2.value"
+									>Full 360° Management</span
+								>
+							</div>
 
-              <div class="gl-meta-item">
-                <span class="gl-meta-label" data-i18n="meta2.label">Coverage</span>
-                <span class="gl-meta-value" data-i18n="meta2.value">Full 360° Management</span>
-              </div>
+							<div class="gl-meta-item">
+								<span class="gl-meta-label" data-i18n="meta3.label"
+									>Commitment</span
+								>
+								<span class="gl-meta-value" data-i18n="meta3.value"
+									>Efficiency & Sustainability</span
+								>
+							</div>
+						</div>
+					</div>
 
-              <div class="gl-meta-item">
-                <span class="gl-meta-label" data-i18n="meta3.label">Commitment</span>
-                <span class="gl-meta-value" data-i18n="meta3.value">Efficiency & Sustainability</span>
-              </div>
-            </div>
-          </div>
+					<!-- SIDE CARD -->
+					<aside class="gl-side-card">
+						<div class="gl-side-gradient"></div>
 
-          <!-- SIDE CARD -->
-          <aside class="gl-side-card">
-            <div class="gl-side-gradient"></div>
+						<div class="gl-side-inner">
+							<h2 class="gl-side-title" data-i18n="side.title">
+								What makes us different?
+							</h2>
 
-            <div class="gl-side-inner">
-              <h2 class="gl-side-title" data-i18n="side.title">What makes us different?</h2>
-
-              <div class="gl-feature-list">
-                  <!-- Generated via JS or hardcoded? Hardcoding for now to match structure, but using data-i18n for content -->
-                  <!-- Since the JSON structure is an array, we might need to update JS to handle it, OR we can hardcode the keys if we flatten the JSON or access by index. 
+							<div class="gl-feature-list">
+								<!-- Generated via JS or hardcoded? Hardcoding for now to match structure, but using data-i18n for content -->
+								<!-- Since the JSON structure is an array, we might need to update JS to handle it, OR we can hardcode the keys if we flatten the JSON or access by index. 
                        However, standard i18n libraries usually handle keys. Let's assume we can access array items or we should flatten them in HTML. 
                        Actually, to be safe and keep it simple without changing JS logic too much (assuming simple key replacement), I will use specific keys for each item if possible, or just hardcode the structure here referencing specific indices if the JS supports it.
                        
@@ -124,7 +156,7 @@
                        
                        Let's look at main.js to see how it handles translations.
                   -->
-                  <!-- I will assume I need to update main.js or change the JSON structure back to flat keys if main.js is simple. 
+								<!-- I will assume I need to update main.js or change the JSON structure back to flat keys if main.js is simple. 
                        Let's check main.js first. But I am in the middle of a tool call. 
                        I will assume flat keys are safer. I will update the HTML to use flat keys and then I might need to adjust the JSON in a subsequent step if I made it an array.
                        Actually, I already sent the JSON update with an array. I should probably check main.js. 
@@ -135,56 +167,79 @@
                        
                        Let's assume I'll fix the JSON to be flat keys in the next step if needed. Or better, I'll write the HTML to expect flat keys like side.item1.title, side.item1.desc and then I will update the JSON to match this structure to be safe.
                   -->
-                  
-                  <div class="gl-feature-item">
-                      <h3 data-i18n="side.items.0.title">The Hybrid Advantage: Global Efficiency, Local Roots</h3>
-                      <p data-i18n="side.items.0.desc">Our centralized remote team handles administration...</p>
-                  </div>
-                  
-                  <div class="gl-feature-item">
-                      <h3 data-i18n="side.items.1.title">The Compliance Shield...</h3>
-                      <p data-i18n="side.items.1.desc">Real estate is a legal minefield...</p>
-                  </div>
 
-                  <div class="gl-feature-item">
-                      <h3 data-i18n="side.items.2.title">Eco-Operational Excellence</h3>
-                      <p data-i18n="side.items.2.desc">"Green" isn't just part of our name...</p>
-                  </div>
+								<div class="gl-feature-item">
+									<h3 data-i18n="side.items.0.title">
+										The Hybrid Advantage: Global Efficiency, Local Roots
+									</h3>
+									<p data-i18n="side.items.0.desc">
+										Our centralized remote team handles administration...
+									</p>
+								</div>
 
-                  <div class="gl-feature-item">
-                      <h3 data-i18n="side.items.3.title">AI-Driven Asset Protection</h3>
-                      <p data-i18n="side.items.3.desc">We don’t wait for things to break...</p>
-                  </div>
+								<div class="gl-feature-item">
+									<h3 data-i18n="side.items.1.title">
+										The Compliance Shield...
+									</h3>
+									<p data-i18n="side.items.1.desc">
+										Real estate is a legal minefield...
+									</p>
+								</div>
 
-                  <div class="gl-feature-item">
-                      <h3 data-i18n="side.items.4.title">People-First Profitability</h3>
-                      <p data-i18n="side.items.4.desc">A stable tenant is a paying tenant...</p>
-                  </div>
-              </div>
+								<div class="gl-feature-item">
+									<h3 data-i18n="side.items.2.title">
+										Eco-Operational Excellence
+									</h3>
+									<p data-i18n="side.items.2.desc">
+										"Green" isn't just part of our name...
+									</p>
+								</div>
 
-              <div class="gl-divider"></div>
-              
-              <p class="gl-specialists" data-i18n="side.specialists">
-                  Specialists in: LIHTC | Section 8 Vouchers | Florida Live Local Act | Mixed-Income Developments
-              </p>
+								<div class="gl-feature-item">
+									<h3 data-i18n="side.items.3.title">
+										AI-Driven Asset Protection
+									</h3>
+									<p data-i18n="side.items.3.desc">
+										We don’t wait for things to break...
+									</p>
+								</div>
 
-              <p class="gl-side-note" data-i18n="side.note">
-                We are currently in the final stage of development...
-              </p>
-            </div>
-          </aside>
-        </section>
-      </main>
+								<div class="gl-feature-item">
+									<h3 data-i18n="side.items.4.title">
+										People-First Profitability
+									</h3>
+									<p data-i18n="side.items.4.desc">
+										A stable tenant is a paying tenant...
+									</p>
+								</div>
+							</div>
 
-      <!-- FOOTER -->
-      <footer class="gl-footer">
-        <p class="gl-footer-text">
-          © <span id="year"></span>
-          <span data-i18n="footer.text">Greenline Property Management. All rights reserved.</span>
-        </p>
-      </footer>
-    </div>
+							<div class="gl-divider"></div>
 
-    <script src="main.js"></script>
-  </body>
+							<p class="gl-specialists" data-i18n="side.specialists">
+								Specialists in: LIHTC | Section 8 Vouchers | Florida Live Local
+								Act | Mixed-Income Developments
+							</p>
+
+							<p class="gl-side-note" data-i18n="side.note">
+								We are currently in the final stage of development...
+							</p>
+						</div>
+					</aside>
+				</section>
+			</main>
+
+			<!-- FOOTER -->
+			<footer class="gl-footer">
+				<p class="gl-footer-text">
+					© <span id="year"></span>
+					<span data-i18n="footer.text"
+						>Greenline Property Management. All rights reserved.</span
+					>
+				</p>
+			</footer>
+		</div>
+
+		<script src="main.js"></script>
+	</body>
 </html>
