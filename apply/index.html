@@ -105,35 +105,38 @@
 
 						<div class="form-group dropdown-group">
 							<label
-								for="preferredOption"
+								for="preferredOptionTrigger"
 								data-i18n="apply.fields.preferred_option"
 								>Preferred Option</label
 							>
-							<select
-								id="preferredOption"
-								name="preferredOption"
-								class="gl-input2"
-								required
-							>
-								<option value="" data-i18n="apply.options.placeholder">
-									Select an option
-								</option>
-								<option value="A" data-i18n="apply.options.a">
-									Option A: Full bed furnished bedroom
-								</option>
-								<option value="B" data-i18n="apply.options.b">
-									Option B: Loft Bed with Desk
-								</option>
-								<option value="C" data-i18n="apply.options.c">
-									Option C: Two Full Bed Bunk Bed
-								</option>
-								<option value="D" data-i18n="apply.options.d">
-									Option D: Two Twin furnished bedroom
-								</option>
-								<option value="F" disabled data-i18n="apply.options.f">
-									Option F: Queen bed furnished bedroom (SOLD OUT)
-								</option>
-							</select>
+							<div class="gl-custom-select" id="customPreferredOption">
+								<div class="gl-select-trigger" id="preferredOptionTrigger">
+									<span class="gl-select-value" data-i18n="apply.options.placeholder">Select an option</span>
+									<svg class="gl-select-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+										<path d="M6 9l6 6 6-6" />
+									</svg>
+								</div>
+								<div class="gl-select-options">
+									<div class="gl-select-option" data-value="A" data-i18n="apply.options.a">Option A: Full bed furnished bedroom</div>
+									<div class="gl-select-option" data-value="B" data-i18n="apply.options.b">Option B: Loft Bed with Desk</div>
+									<div class="gl-select-option" data-value="C" data-i18n="apply.options.c">Option C: Two Full Bed Bunk Bed</div>
+									<div class="gl-select-option" data-value="D" data-i18n="apply.options.d">Option D: Two Twin furnished bedroom</div>
+									<div class="gl-select-option disabled" data-value="F" data-i18n="apply.options.f">Option F: Queen bed furnished bedroom (SOLD OUT)</div>
+								</div>
+								<select
+									id="preferredOption"
+									name="preferredOption"
+									style="display: none;"
+									required
+								>
+									<option value=""></option>
+									<option value="A"></option>
+									<option value="B"></option>
+									<option value="C"></option>
+									<option value="D"></option>
+									<option value="F" disabled></option>
+								</select>
+							</div>
 
 							<div id="imagePreviewContainer" class="image-preview-dropdown">
 								<img
@@ -166,22 +169,30 @@
 						</div>
 
 						<div class="form-group">
-							<label for="occupancy" data-i18n="apply.fields.occupancy"
+							<label for="occupancyTrigger" data-i18n="apply.fields.occupancy"
 								>Occupancy (max 2 people per room)</label
 							>
-							<select
-								id="occupancy"
-								name="occupancy"
-								class="gl-input2"
-								required
-							>
-								<option value="Single" data-i18n="apply.options.single">
-									1 person
-								</option>
-								<option value="Double" data-i18n="apply.options.double">
-									2 people
-								</option>
-							</select>
+							<div class="gl-custom-select" id="customOccupancy">
+								<div class="gl-select-trigger" id="occupancyTrigger">
+									<span class="gl-select-value" data-i18n="apply.options.single">1 person</span>
+									<svg class="gl-select-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+										<path d="M6 9l6 6 6-6" />
+									</svg>
+								</div>
+								<div class="gl-select-options">
+									<div class="gl-select-option selected" data-value="Single" data-i18n="apply.options.single">1 person</div>
+									<div class="gl-select-option" data-value="Double" data-i18n="apply.options.double">2 people</div>
+								</div>
+								<select
+									id="occupancy"
+									name="occupancy"
+									style="display: none;"
+									required
+								>
+									<option value="Single" selected></option>
+									<option value="Double"></option>
+								</select>
+							</div>
 						</div>
 
 						<button type="submit" class="gl-button">
