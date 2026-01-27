@@ -1,0 +1,138 @@
+.gl-hero-unified {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	padding-bottom: 40px;
+}
+
+.gl-hero-content-wide {
+	width: 100%;
+	max-width: 700px;
+	padding: 32px;
+	border-radius: var(--gl-radius-lg);
+	background:
+		linear-gradient(135deg, rgba(15, 23, 42, 0.92), rgba(15, 23, 42, 0.85)),
+		radial-gradient(
+			circle at top left,
+			rgba(51, 194, 127, 0.22),
+			transparent 60%
+		);
+	border: 1px solid var(--gl-border-subtle);
+	box-shadow: var(--gl-shadow-soft);
+	backdrop-filter: blur(18px);
+	text-align: center;
+}
+
+.gl-form-stacked {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	margin-top: 32px;
+	text-align: left;
+}
+
+.form-group {
+	display: flex;
+	flex-direction: column;
+	gap: 6px;
+}
+
+.form-group label {
+	font-size: 13px;
+	color: var(--gl-text-soft);
+	font-weight: 500;
+}
+
+.gl-title {
+	display: flex;
+	justify-content: center;
+	gap: 8px;
+	flex-wrap: nowrap;
+	white-space: nowrap;
+}
+
+.gl-subtitle {
+	text-align: center;
+	margin-top: 16px;
+	font-size: 15px;
+	color: var(--gl-text-soft);
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.gl-title-highlight {
+	display: inline;
+}
+
+.gl-input2 {
+	width: 100%;
+	height: 50px;
+	background-color: rgba(15, 23, 42, 0.5);
+	backdrop-filter: blur(4px);
+	padding: 10px 16px;
+	font-size: 15px;
+	border-radius: 12px;
+	border: 1px solid rgba(255, 255, 255, 0.1);
+	color: var(--gl-text-main);
+	transition: all 0.2s ease;
+}
+
+.gl-input2:focus {
+	background-color: rgba(15, 23, 42, 0.8);
+	border-color: var(--gl-primary);
+	outline: none;
+	box-shadow: 0 0 0 3px var(--gl-primary-soft);
+}
+
+.dropdown-group {
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+}
+
+/* Image Preview Styles for Dropdown */
+.image-preview-dropdown {
+	width: 100%;
+	aspect-ratio: 16/9;
+	border-radius: 12px;
+	overflow: hidden;
+	position: relative;
+	background: rgba(0, 0, 0, 0.4);
+	border: 1px solid var(--gl-border-subtle);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5);
+	margin-top: 4px;
+}
+
+.preview-img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	transition:
+		opacity 0.4s ease,
+		transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+	opacity: 0;
+	transform: scale(1.05);
+}
+
+.preview-img.visible {
+	opacity: 1;
+	transform: scale(1);
+}
+
+.placeholder-text {
+	position: absolute;
+	color: var(--gl-text-soft);
+	font-size: 13px;
+	text-align: center;
+	padding: 20px;
+	font-style: italic;
+}
+
+@media (max-width: 900px) {
+	.image-preview {
+		aspect-ratio: 16/9;
+	}
+}

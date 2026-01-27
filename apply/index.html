@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title data-i18n="meta.title">Intake Form | Greenline</title>
+		<link rel="stylesheet" href="../styles.css" />
+		<link rel="stylesheet" href="apply.css" />
+		<!-- Google Fonts -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+			rel="stylesheet"
+		/>
+	</head>
+	<body class="gl-page">
+		<div class="gl-overlay"></div>
+
+		<header class="gl-header">
+			<div class="gl-logo">
+				<img src="../img/logo.webp" alt="Greenline Logo" class="gl-logo-img" />
+			</div>
+			<div class="lang-switcher">
+				<button data-lang="en" class="lang-btn">EN</button>
+				<button data-lang="es" class="lang-btn">ES</button>
+			</div>
+		</header>
+
+		<main class="gl-main">
+			<section class="gl-hero-unified">
+				<div class="gl-hero-content-wide">
+					<div class="gl-badge" data-i18n="apply.badge">Application</div>
+					<h1 class="gl-title flex">
+						<span data-i18n="apply.title"></span>
+						<span
+							class="gl-title-highlight"
+							data-i18n="apply.title_highlight"
+						></span>
+					</h1>
+					<p class="gl-subtitle" data-i18n="apply.subtitle"></p>
+
+					<form
+						id="intakeForm"
+						class="gl-form-stacked"
+						action="process_intake.php"
+						method="POST"
+					>
+						<div class="form-group">
+							<label for="firstName" data-i18n="apply.fields.first_name"
+								>Name</label
+							>
+							<input
+								type="text"
+								id="firstName"
+								name="firstName"
+								class="gl-input2"
+								required
+								data-i18n-placeholder="apply.fields.first_name"
+								placeholder="First Name"
+							/>
+						</div>
+
+						<div class="form-group">
+							<label for="lastName" data-i18n="apply.fields.last_name"
+								>Last Name</label
+							>
+							<input
+								type="text"
+								id="lastName"
+								name="lastName"
+								class="gl-input2"
+								required
+								data-i18n-placeholder="apply.fields.last_name"
+								placeholder="Last Name"
+							/>
+						</div>
+
+						<div class="form-group">
+							<label for="phone" data-i18n="apply.fields.phone"
+								>Phone Number</label
+							>
+							<input
+								type="tel"
+								id="phone"
+								name="phone"
+								class="gl-input2"
+								required
+								placeholder="+1 (555) 000-0000"
+							/>
+						</div>
+
+						<div class="form-group">
+							<label for="email" data-i18n="apply.fields.email">Email</label>
+							<input
+								type="email"
+								id="email"
+								name="email"
+								class="gl-input2"
+								required
+								data-i18n-placeholder="apply.fields.email"
+								placeholder="you@example.com"
+							/>
+						</div>
+
+						<div class="form-group dropdown-group">
+							<label
+								for="preferredOption"
+								data-i18n="apply.fields.preferred_option"
+								>Preferred Option</label
+							>
+							<select
+								id="preferredOption"
+								name="preferredOption"
+								class="gl-input2"
+								required
+							>
+								<option value="" data-i18n="apply.options.placeholder">
+									Select an option
+								</option>
+								<option value="A" data-i18n="apply.options.a">
+									Option A: Full bed furnished bedroom
+								</option>
+								<option value="B" data-i18n="apply.options.b">
+									Option B: Loft Bed with Desk
+								</option>
+								<option value="C" data-i18n="apply.options.c">
+									Option C: Two Full Bed Bunk Bed
+								</option>
+								<option value="D" data-i18n="apply.options.d">
+									Option D: Two Twin furnished bedroom
+								</option>
+								<option value="F" disabled data-i18n="apply.options.f">
+									Option F: Queen bed furnished bedroom (SOLD OUT)
+								</option>
+							</select>
+
+							<div id="imagePreviewContainer" class="image-preview-dropdown">
+								<img
+									id="previewImage"
+									src=""
+									alt="Room Preview"
+									class="preview-img"
+								/>
+								<div
+									id="placeholderText"
+									class="placeholder-text"
+									data-i18n="apply.preview.placeholder"
+								>
+									Select an option to see the room
+								</div>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="moveInDate" data-i18n="apply.fields.move_in_date"
+								>Move-in Date</label
+							>
+							<input
+								type="date"
+								id="moveInDate"
+								name="moveInDate"
+								class="gl-input2"
+								required
+							/>
+						</div>
+
+						<div class="form-group">
+							<label for="occupancy" data-i18n="apply.fields.occupancy"
+								>Occupancy</label
+							>
+							<select
+								id="occupancy"
+								name="occupancy"
+								class="gl-input2"
+								required
+							>
+								<option value="Single" data-i18n="apply.options.single">
+									Single
+								</option>
+								<option value="Double" data-i18n="apply.options.double">
+									Double
+								</option>
+							</select>
+						</div>
+
+						<button type="submit" class="gl-button">
+							<span data-i18n="apply.fields.submit">Submit</span>
+							<svg
+								class="gl-icon"
+								viewBox="0 0 24 24"
+								fill="none"
+								stroke="currentColor"
+								stroke-width="2"
+								style="width: 18px; height: 18px"
+							>
+								<path d="M5 12h14M12 5l7 7-7 7" />
+							</svg>
+						</button>
+					</form>
+				</div>
+			</section>
+		</main>
+
+		<footer class="gl-footer">
+			<p class="gl-footer-text">
+				© <span id="year">2026</span>
+				<span data-i18n="footer.text"
+					>Greenline Property Management. All rights reserved.</span
+				>
+			</p>
+		</footer>
+
+		<script src="apply.js"></script>
+		<script>
+			document.getElementById("year").textContent = new Date().getFullYear();
+		</script>
+	</body>
+</html>
