@@ -71,7 +71,7 @@
 			"email": "Email",
 			"preferred_option": "Preferred Option",
 			"move_in_date": "Move-in Date",
-			"occupancy": "Occupancy",
+			"occupancy": "Occupancy (max 2 people per room)",
 			"submit": "Submit"
 		},
 		"options": {
@@ -81,8 +81,8 @@
 			"c": "Option C: Two Full Bed Bunk Bed",
 			"d": "Option D: Two Twin furnished bedroom",
 			"f": "Option F: Queen bed furnished bedroom (SOLD OUT)",
-			"single": "Single",
-			"double": "Double"
+			"single": "1 person",
+			"double": "2 people"
 		},
 		"preview": {
 			"placeholder": "Select an option to see the room",
