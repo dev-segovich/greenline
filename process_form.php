@@ -1,5 +1,21 @@
 <?php
 // ====================================
+// CONFIGURACIÓN INICIAL (PHPMailer)
+// ====================================
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+require __DIR__ . '/PHPMailer-master/src/PHPMailer.php';
+require __DIR__ . '/PHPMailer-master/src/SMTP.php';
+require __DIR__ . '/PHPMailer-master/src/Exception.php';
+
+// CREDENCIALES SMTP
+$smtpHost = 'mail.zerotoplan.com';
+$smtpUser = 'no-reply@zerotoplan.com';
+$smtpPass = '5)}dQ&%jli4j!8bc';
+$smtpPort = 465;
+
+// ====================================
 // CONEXIÓN A LA BASE DE DATOS
 // ====================================
 $host = 'localhost';
@@ -31,10 +47,42 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     try {
         // Insertar en base de datos (Tabla greenline_contact)
         $stmt = $pdo->prepare("INSERT INTO greenline_contact (email) VALUES (:email)");
-        
         $stmt->execute([
             ":email" => $email
         ]);
+
+        // ====================================
+        // CONFIGURAR CORREO (PHPMailer)
+        // ====================================
+        $mail = new PHPMailer(true);
+        $mail->isSMTP();
+        $mail->Host       = $smtpHost;
+        $mail->SMTPAuth   = true;
+        $mail->Username   = $smtpUser;
+        $mail->Password   = $smtpPass;
+        $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
+        $mail->Port       = $smtpPort;
+        $mail->CharSet    = 'UTF-8';
+
+        // ====================================
+        // ENVÍO INTERNO AL EQUIPO
+        // ====================================
+        $mail->setFrom($smtpUser, 'Greenline Team');
+        $mail->addAddress("info@zerotoplan.com");
+        $mail->Subject = "📩 New Contact Lead - {$email}";
+        $mail->isHTML(true);
+        $mail->Body = "
+        <html>
+        <body style='font-family:Arial,sans-serif;color:#333;'>
+          <h3>New Lead Received</h3>
+          <p>A new user has submitted their email through the landing page form.</p>
+          <p><strong>Email:</strong> {$email}</p>
+          <p><em>Submitted on " . date('Y-m-d H:i:s') . "</em><br></p>
+          <h5>GLINE - #CONTACT</h5>
+        </body>
+        </html>";
+
+        $mail->send();
 
         // ====================================
         // CONFIRMACIÓN VISUAL AL USUARIO
@@ -44,6 +92,12 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             window.location.href='index.html';
         </script>";
 
+    } catch (Exception $e) {
+        // Error de Mail - Loguear o mostrar
+        echo "<script>
+            alert('⚠️ Mail error: " . addslashes($e->getMessage()) . "');
+            window.location.href='index.html';
+        </script>";
     } catch (PDOException $e) {
         echo "<script>
             alert('⚠️ Database error: " . addslashes($e->getMessage()) . "');
@@ -54,3 +108,4 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     echo "<script>alert('Invalid request.'); window.history.back();</script>";
 }
 ?>
+
