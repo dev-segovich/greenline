@@ -102,6 +102,66 @@ document.addEventListener("DOMContentLoaded", () => {
 	// Carga inicial obligatoria
 	loadLanguage(currentLang);
 
+	// --- LÓGICA DE CUSTOM SELECTS ---
+	function initCustomSelects() {
+		const selects = document.querySelectorAll(".gl-custom-select");
+
+		selects.forEach((select) => {
+			const trigger = select.querySelector(".gl-select-trigger");
+			const optionsContainer = select.querySelector(".gl-select-options");
+			const options = select.querySelectorAll(".gl-select-option");
+			const hiddenSelect = select.querySelector("select");
+			const labelSpan = trigger.querySelector(".gl-select-value");
+
+			// Toggle dropdown
+			trigger.addEventListener("click", (e) => {
+				e.stopPropagation();
+				// Close others
+				document.querySelectorAll(".gl-custom-select").forEach((s) => {
+					if (s !== select) s.classList.remove("active");
+				});
+				select.classList.toggle("active");
+			});
+
+			// Handle option click
+			options.forEach((opt) => {
+				opt.addEventListener("click", (e) => {
+					e.stopPropagation();
+					if (opt.classList.contains("disabled")) return;
+
+					const value = opt.dataset.value;
+					const text = opt.textContent;
+
+					// Update hidden select
+					hiddenSelect.value = value;
+					hiddenSelect.dispatchEvent(new Event("change"));
+
+					// Update UI
+					labelSpan.textContent = text;
+					// Si tiene traducción directa, la guardamos para que i18n no la pise mal
+					const i18nKey = opt.getAttribute("data-i18n");
+					if (i18nKey) {
+						labelSpan.setAttribute("data-i18n", i18nKey);
+					}
+
+					options.forEach((o) => o.classList.remove("selected"));
+					opt.classList.add("selected");
+
+					select.classList.remove("active");
+				});
+			});
+		});
+
+		// Close when clicking outside
+		document.addEventListener("click", () => {
+			document.querySelectorAll(".gl-custom-select").forEach((s) => {
+				s.classList.remove("active");
+			});
+		});
+	}
+
+	initCustomSelects();
+
 	// --- LÓGICA DE PREVISUALIZACIÓN ---
 	if (preferredOption) {
 		preferredOption.addEventListener("change", (e) => {

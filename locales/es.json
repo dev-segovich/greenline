@@ -71,7 +71,7 @@
 			"email": "Correo Electrónico",
 			"preferred_option": "Opción de Preferencia",
 			"move_in_date": "Fecha de mudanza",
-			"occupancy": "Ocupación",
+			"occupancy": "Ocupación (máx 2 personas por habitación)",
 			"submit": "Enviar"
 		},
 		"options": {
@@ -81,8 +81,8 @@
 			"c": "Litera con dos camas matrimoniales",
 			"d": "Habitación amueblada con dos camas individuales",
 			"f": "Habitación amueblada con cama queen (AGOTADO)",
-			"single": "Sencilla",
-			"double": "Doble"
+			"single": "1 persona",
+			"double": "2 personas"
 		},
 		"preview": {
 			"placeholder": "Seleccione una opción para ver la habitación",

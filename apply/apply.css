@@ -136,3 +136,110 @@
 		aspect-ratio: 16/9;
 	}
 }
+
+/* Custom Dropdown Styles */
+.gl-custom-select {
+	position: relative;
+	width: 100%;
+	user-select: none;
+}
+
+.gl-select-trigger {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+	height: 50px;
+	padding: 10px 16px;
+	background-color: rgba(15, 23, 42, 0.5);
+	backdrop-filter: blur(8px);
+	border: 1px solid rgba(255, 255, 255, 0.1);
+	border-radius: 12px;
+	color: var(--gl-text-main);
+	cursor: pointer;
+	transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+	font-size: 15px;
+}
+
+.gl-select-trigger:hover {
+	background-color: rgba(15, 23, 42, 0.7);
+	border-color: rgba(255, 255, 255, 0.2);
+}
+
+.gl-custom-select.active .gl-select-trigger {
+	border-color: var(--gl-primary);
+	box-shadow: 0 0 0 3px var(--gl-primary-soft);
+	background-color: rgba(15, 23, 42, 0.8);
+}
+
+.gl-select-arrow {
+	width: 18px;
+	height: 18px;
+	color: var(--gl-text-soft);
+	transition: transform 0.3s ease;
+}
+
+.gl-custom-select.active .gl-select-arrow {
+	transform: rotate(180deg);
+	color: var(--gl-primary);
+}
+
+.gl-select-options {
+	position: absolute;
+	top: calc(100% + 8px);
+	left: 0;
+	right: 0;
+	background: rgba(15, 23, 42, 0.95);
+	backdrop-filter: blur(20px);
+	border: 1px solid rgba(255, 255, 255, 0.1);
+	border-radius: 12px;
+	padding: 8px;
+	z-index: 100;
+	opacity: 0;
+	visibility: hidden;
+	transform: translateY(-10px);
+	transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+	box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.gl-custom-select.active .gl-select-options {
+	opacity: 1;
+	visibility: visible;
+	transform: translateY(0);
+}
+
+.gl-select-option {
+	padding: 12px 16px;
+	border-radius: 8px;
+	font-size: 14px;
+	color: var(--gl-text-muted);
+	cursor: pointer;
+	transition: all 0.2s ease;
+}
+
+.gl-select-option:hover {
+	background-color: rgba(255, 255, 255, 0.05);
+	color: var(--gl-text-main);
+	padding-left: 20px;
+}
+
+.gl-select-option.selected {
+	background-color: var(--gl-primary-soft);
+	color: var(--gl-primary);
+	font-weight: 500;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.gl-select-option.selected::after {
+	content: "✓";
+	font-weight: bold;
+	font-size: 14px;
+}
+
+.gl-select-option.disabled {
+	opacity: 0.5;
+	cursor: not-allowed;
+	pointer-events: none;
+}
