@@ -125,7 +125,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         // ENVÍO INTERNO AL EQUIPO
         // ====================================
         $mail->clearAddresses();
-        $mail->addAddress("rooms@greenlinepmc.com");
+        $mail->addAddress("rooms@atexgrp.com");
         $mail->Subject = "📩 New Application Received - {$fullName}";
         $mail->isHTML(true);
         $mail->Body = "
