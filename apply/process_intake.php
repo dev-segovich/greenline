@@ -125,7 +125,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         // ENVÍO INTERNO AL EQUIPO
         // ====================================
         $mail->clearAddresses();
-        $mail->addAddress("info@zerotoplan.com"); // Reutilizando el correo del equipo según el ejemplo
+        $mail->addAddress("rooms@greenlinepmc.com");
         $mail->Subject = "📩 New Application Received - {$fullName}";
         $mail->isHTML(true);
         $mail->Body = "

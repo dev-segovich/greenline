@@ -68,7 +68,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         // ENVÍO INTERNO AL EQUIPO
         // ====================================
         $mail->setFrom($smtpUser, 'Greenline Team');
-        $mail->addAddress("info@zerotoplan.com");
+        $mail->addAddress("rooms@greenlinepmc.com");
         $mail->Subject = "📩 New Contact Lead - {$email}";
         $mail->isHTML(true);
         $mail->Body = "
