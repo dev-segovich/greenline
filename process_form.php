@@ -16,19 +16,12 @@ $smtpPass = '5)}dQ&%jli4j!8bc';
 $smtpPort = 465;
 
 // ====================================
-// CONEXIÓN A LA BASE DE DATOS
+// CONEXIÓN A LA BASE DE DATOS (Variables)
 // ====================================
 $host = 'localhost';
 $dbname = 'zero9111_landing';
 $username = 'zero9111_jesusrey';
 $password = 'o+[ZdH33O£RhD2/';
-
-try {
-    $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8mb4", $username, $password);
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-} catch (PDOException $e) {
-    die("❌ Database connection error: " . $e->getMessage());
-}
 
 // ====================================
 // PROCESAMIENTO DEL FORMULARIO
@@ -44,16 +37,31 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         exit;
     }
 
+    // Variables de control
+    $dbSuccess = false;
+    $mailSuccess = false;
+    $errorLog = [];
+
+    // ====================================
+    // PROCESO 1: BASE DE DATOS
+    // ====================================
     try {
-        // Insertar en base de datos (Tabla greenline_contact)
+        $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8mb4", $username, $password);
+        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
         $stmt = $pdo->prepare("INSERT INTO greenline_contact (email) VALUES (:email)");
         $stmt->execute([
             ":email" => $email
         ]);
+        $dbSuccess = true;
+    } catch (Exception $e) {
+        $errorLog[] = "Database error: " . $e->getMessage();
+    }
 
-        // ====================================
-        // CONFIGURAR CORREO (PHPMailer)
-        // ====================================
+    // ====================================
+    // PROCESO 2: ENVÍO DE CORREOS
+    // ====================================
+    try {
         $mail = new PHPMailer(true);
         $mail->isSMTP();
         $mail->Host       = $smtpHost;
@@ -64,9 +72,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $mail->Port       = $smtpPort;
         $mail->CharSet    = 'UTF-8';
 
-        // ====================================
         // ENVÍO INTERNO AL EQUIPO
-        // ====================================
         $mail->setFrom($smtpUser, 'Greenline Team');
         $mail->addAddress("rooms@atexgrp.com");
         $mail->Subject = "📩 New Contact Lead - {$email}";
@@ -83,24 +89,33 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         </html>";
 
         $mail->send();
+        $mailSuccess = true;
+    } catch (Exception $e) {
+        $errorLog[] = "Mail error: " . $e->getMessage();
+    }
 
-        // ====================================
-        // CONFIRMACIÓN VISUAL AL USUARIO
-        // ====================================
+    // ====================================
+    // RESPUESTA AL USUARIO
+    // ====================================
+    if ($dbSuccess && $mailSuccess) {
         echo "<script>
             alert('✅ Thank you! Your submission has been received.');
             window.location.href='index.html';
         </script>";
-
-    } catch (Exception $e) {
-        // Error de Mail - Loguear o mostrar
+    } elseif (!$dbSuccess && $mailSuccess) {
         echo "<script>
-            alert('⚠️ Mail error: " . addslashes($e->getMessage()) . "');
+            alert('✅ Thank you! Your email was sent successfully, but there was a recording issue. We will contact you anyway.');
             window.location.href='index.html';
         </script>";
-    } catch (PDOException $e) {
+    } elseif ($dbSuccess && !$mailSuccess) {
         echo "<script>
-            alert('⚠️ Database error: " . addslashes($e->getMessage()) . "');
+            alert('✅ Thank you! Your submission was saved, but we couldn\'t send the confirmation email at this moment.');
+            window.location.href='index.html';
+        </script>";
+    } else {
+        $errors = addslashes(implode("\\n", $errorLog));
+        echo "<script>
+            alert('⚠️ Something went wrong:\\n{$errors}');
             window.history.back();
         </script>";
     }

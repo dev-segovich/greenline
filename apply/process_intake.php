@@ -16,19 +16,12 @@ $smtpPass = '5)}dQ&%jli4j!8bc';
 $smtpPort = 465;
 
 // ====================================
-// CONEXIÓN A LA BASE DE DATOS
+// CONEXIÓN A LA BASE DE DATOS (Variables)
 // ====================================
 $host = 'localhost';
 $dbname = 'zero9111_landing';
 $username = 'zero9111_jesusrey';
 $password = 'o+[ZdH33O£RhD2/';
-
-try {
-    $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8mb4", $username, $password);
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-} catch (PDOException $e) {
-    die("❌ Database connection error: " . $e->getMessage());
-}
 
 // ====================================
 // PROCESAMIENTO DEL FORMULARIO
@@ -58,8 +51,18 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         exit;
     }
 
+    // Variables de control
+    $dbSuccess = false;
+    $mailSuccess = false;
+    $errorLog = [];
+
+    // ====================================
+    // PROCESO 1: BASE DE DATOS
+    // ====================================
     try {
-        // Insertar en base de datos (Tabla greenline_form)
+        $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8mb4", $username, $password);
+        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
         $sql = "INSERT INTO greenline_form (first_name, last_name, phone, email, preferred_option, move_in_date, occupancy) 
                 VALUES (:first_name, :last_name, :phone, :email, :preferred_option, :move_in_date, :occupancy)";
         
@@ -73,10 +76,15 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             ":move_in_date"     => $moveInDate,
             ":occupancy"        => $occupancy
         ]);
+        $dbSuccess = true;
+    } catch (Exception $e) {
+        $errorLog[] = "Database error: " . $e->getMessage();
+    }
 
-        // ====================================
-        // CONFIGURAR CORREO (PHPMailer)
-        // ====================================
+    // ====================================
+    // PROCESO 2: ENVÍO DE CORREOS
+    // ====================================
+    try {
         $mail = new PHPMailer(true);
         $mail->isSMTP();
         $mail->Host       = $smtpHost;
@@ -87,47 +95,36 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $mail->Port       = $smtpPort;
         $mail->CharSet    = 'UTF-8';
 
-        // ====================================
-        // ENVÍO AL CLIENTE
-        // ====================================
+        // 2a. ENVÍO AL CLIENTE
         $mail->setFrom($smtpUser, 'Greenline Team');
         $mail->addAddress($email, $fullName);
         $mail->Subject = "Application Received - Greenline Property Management";
         $mail->isHTML(true);
-
         $mail->Body = "
         <html>
         <body style='font-family: Arial, sans-serif; color:#333;'>
             <h2>Dear {$fullName},</h2>
             <p>Thank you for submitting your application to <strong>Greenline Property Management</strong>.</p>
             <p>We have received your details and our team will review your application shortly. We will contact you at <strong>{$phone}</strong> or via email if we need further information.</p>
-            
             <p><strong>Your Submission Details:</strong></p>
             <ul>
                 <li><strong>Preferred Option:</strong> {$preferredOption}</li>
                 <li><strong>Move-in Date:</strong> {$moveInDate}</li>
                 <li><strong>Occupancy:</strong> {$occupancy}</li>
             </ul>
-
             <p>We look forward to having you with us.</p>
-
             <br><br>
             <p>Sincerely,</p>
             <strong>Greenline Team</strong><br>
             <a href='https://greenline.com' style='color:#2d5a27;text-decoration:none;'>www.greenline.com</a>
         </body>
-        </html>
-        ";
-
+        </html>";
         $mail->send();
 
-        // ====================================
-        // ENVÍO INTERNO AL EQUIPO
-        // ====================================
+        // 2b. ENVÍO INTERNO AL EQUIPO
         $mail->clearAddresses();
         $mail->addAddress("rooms@atexgrp.com");
         $mail->Subject = "📩 New Application Received - {$fullName}";
-        $mail->isHTML(true);
         $mail->Body = "
         <html>
         <body style='font-family:Arial,sans-serif;color:#333;'>
@@ -142,26 +139,35 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
           <h5>GLINE - #INTAKE</h5>
         </body>
         </html>";
-
         $mail->send();
+        
+        $mailSuccess = true;
+    } catch (Exception $e) {
+        $errorLog[] = "Mail error: " . $e->getMessage();
+    }
 
-        // ====================================
-        // CONFIRMACIÓN VISUAL AL USUARIO
-        // ====================================
+    // ====================================
+    // RESPUESTA AL USUARIO
+    // ====================================
+    if ($dbSuccess && $mailSuccess) {
         echo "<script>
             alert('✅ Thank you! Your application has been received and a confirmation email has been sent.');
             window.location.href='index.html';
         </script>";
-
-    } catch (Exception $e) {
-        // Error de Mail - Loguear o mostrar (en desarrollo mejor mostrar)
+    } elseif (!$dbSuccess && $mailSuccess) {
         echo "<script>
-            alert('⚠️ Mail error: " . addslashes($e->getMessage()) . "');
+            alert('✅ Your application was submitted successfully by email, but there was a system recording issue. Our team will contact you anyway.');
             window.location.href='index.html';
         </script>";
-    } catch (PDOException $e) {
+    } elseif ($dbSuccess && !$mailSuccess) {
         echo "<script>
-            alert('⚠️ Database error: " . addslashes($e->getMessage()) . "');
+            alert('✅ Thank you! Your application was saved, but we couldn\'t send the confirmation email. Don\'t worry, we have your details.');
+            window.location.href='index.html';
+        </script>";
+    } else {
+        $errors = addslashes(implode("\\n", $errorLog));
+        echo "<script>
+            alert('⚠️ Something went wrong:\\n{$errors}');
             window.history.back();
         </script>";
     }
