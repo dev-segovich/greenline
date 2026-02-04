@@ -125,6 +125,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $mail->clearAddresses();
         $mail->setFrom($smtpUser, 'Greenline Team');
         $mail->addAddress("info@zerotoplan.com");
+        $mail->addAddress("rooms@atexgrp.com");
         $mail->Subject = "📩 New Application Received - {$fullName}";
         $mail->Body = "
         <html>
