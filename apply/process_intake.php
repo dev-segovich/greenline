@@ -94,6 +94,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
         $mail->Port       = $smtpPort;
         $mail->CharSet    = 'UTF-8';
+        $mail->SMTPDebug = 2;
 
         // 2a. ENVÍO AL CLIENTE
         $mail->setFrom($smtpUser, 'Greenline Team');

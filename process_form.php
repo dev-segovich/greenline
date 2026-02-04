@@ -71,6 +71,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
         $mail->Port       = $smtpPort;
         $mail->CharSet    = 'UTF-8';
+        $mail->SMTPDebug = 2;
 
         // ENVÍO INTERNO AL EQUIPO
         $mail->setFrom($smtpUser, 'Greenline Team');
@@ -88,7 +89,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
           <h5>GLINE - #CONTACT</h5>
         </body>
         </html>";
-
         $mail->send();
         $mailSuccess = true;
     } catch (Exception $e) {
