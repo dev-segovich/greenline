@@ -123,7 +123,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
         // 2b. ENVÍO INTERNO AL EQUIPO
         $mail->clearAddresses();
-        $mail->addAddress("rooms@atexgrp.com", "info@zerotoplan.com");
+        $mail->setFrom($smtpUser, 'Greenline Team');
+        $mail->addAddress("info@zerotoplan.com");
         $mail->Subject = "📩 New Application Received - {$fullName}";
         $mail->Body = "
         <html>
