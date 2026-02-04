@@ -125,7 +125,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $mail->clearAddresses();
         $mail->setFrom($smtpUser, 'Greenline Team');
         $mail->addAddress("Rooms@atexgrp.com");
-        $mail->Subject = "📩 New Application Received - {$fullName}";
+        $mail->Subject = " New Application Received - {$fullName}";
         $mail->Body = "
         <html>
         <body style='font-family:Arial,sans-serif;color:#333;'>

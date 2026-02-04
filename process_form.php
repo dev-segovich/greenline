@@ -71,11 +71,15 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
         $mail->Port       = $smtpPort;
         $mail->CharSet    = 'UTF-8';
+        $mail->SMTPDebug = 2;
+        $mail->Debugoutput = function($str, $level) {
+            file_put_contents('debug_mail.log', gmdate('Y-m-d H:i:s'). " | $level | $str\n", FILE_APPEND);
+        };
 
         // ENVÍO INTERNO AL EQUIPO
         $mail->setFrom($smtpUser, 'Greenline Team');
-        $mail->addAddress("Rooms@atexgrp.com");
-        $mail->Subject = "📩 New Contact Lead - {$email}";
+        $mail->addAddress("rooms@atexgrp.com");
+        $mail->Subject = " New Contact Lead - {$email}";
         $mail->isHTML(true);
         $mail->Body = "
         <html>
