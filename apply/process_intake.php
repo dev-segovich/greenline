@@ -95,6 +95,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $mail->Port       = $smtpPort;
         $mail->CharSet    = 'UTF-8';
         $mail->SMTPDebug = 2;
+        $mail->Debugoutput = function($str, $level) {
+            file_put_contents('debug_mail.log', gmdate('Y-m-d H:i:s'). " | $level | $str\n", FILE_APPEND);
+        };
 
         // 2a. ENVÍO AL CLIENTE
         $mail->setFrom($smtpUser, 'Greenline Team');
