@@ -11,7 +11,7 @@ require __DIR__ . '/../PHPMailer-master/src/Exception.php';
 
 // CREDENCIALES SMTP
 $smtpHost = 'greenlinepmc.com';
-$smtpUser = 'no-reply@greenline.com';
+$smtpUser = 'no-reply@greenlinepmc.com';
 $smtpPass = '0#Gx$cprdjy9CwMy';
 $smtpPort = 465;
 
