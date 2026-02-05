@@ -13,7 +13,7 @@ require __DIR__ . '/../PHPMailer-master/src/Exception.php';
 $smtpHost = 'mail.zerotoplan.com';
 $smtpUser = 'no-reply@zerotoplan.com';
 $smtpPass = '5)}dQ&%jli4j!8bc';
-$smtpPort = 587;
+$smtpPort = 465;
 
 // ====================================
 // CONEXIÓN A LA BASE DE DATOS (Variables)
