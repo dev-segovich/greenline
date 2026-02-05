@@ -10,9 +10,9 @@ require __DIR__ . '/../PHPMailer-master/src/SMTP.php';
 require __DIR__ . '/../PHPMailer-master/src/Exception.php';
 
 // CREDENCIALES SMTP
-$smtpHost = 'mail.zerotoplan.com';
-$smtpUser = 'no-reply@zerotoplan.com';
-$smtpPass = '5)}dQ&%jli4j!8bc';
+$smtpHost = 'greenlinepmc.com';
+$smtpUser = 'no-reply@greenline.com';
+$smtpPass = '0#Gx$cprdjy9CwMy';
 $smtpPort = 465;
 
 // ====================================
