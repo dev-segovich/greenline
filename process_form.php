@@ -13,7 +13,7 @@ require __DIR__ . '/PHPMailer-master/src/Exception.php';
 $smtpHost = 'mail.zerotoplan.com';
 $smtpUser = 'no-reply@zerotoplan.com';
 $smtpPass = '5)}dQ&%jli4j!8bc';
-$smtpPort = 465;
+$smtpPort = 587;
 
 // ====================================
 // CONEXIÓN A LA BASE DE DATOS (Variables)
@@ -78,7 +78,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
         // ENVÍO INTERNO AL EQUIPO
         $mail->setFrom($smtpUser, 'Greenline Team');
-        $mail->addAddress("rooms@atexgrp.com");
+        $mail->addAddress("Rooms@atexgrp.com");
         $mail->Subject = " New Contact Lead - {$email}";
         $mail->isHTML(true);
         $mail->Body = "
